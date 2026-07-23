@@ -1,0 +1,28 @@
+{
+  "build": {
+    "command": "hugo --config config/hugo.toml --minify",
+    "output_directory": "public"
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "name": "X-Content-Type-Options", "value": "nosniff" },
+        { "name": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "name": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/css/(.*)",
+      "headers": [
+        { "name": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        { "name": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
+}

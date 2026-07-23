@@ -1,0 +1,57 @@
+baseURL = "https://bitunbi.com"
+languageCode = "zh-cn"
+title = "小吴乐意"
+description = "小吴乐意 - 比特币世界观 & 生活随笔"
+pagination.pagerSize = 10
+
+[params]
+  author = "小吴乐意"
+  description = "比特币世界观 & 生活随笔 | 数据驱动的长期主义"
+  siteUrl = "https://btchao.com"
+  dateFormat = "2006-01-02"
+  
+  [[params.social]]
+    name = "官网"
+    url = "https://btchao.com"
+  
+  [[params.social]]
+    name = "GitHub"
+    url = "https://github.com/lovexw"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "github"
+    lineNos = false
+
+[menu]
+  [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "比特币"
+    url = "/categories/比特币/"
+    weight = 2
+  [[menu.main]]
+    name = "生活随笔"
+    url = "/categories/生活随笔/"
+    weight = 3
+  [[menu.main]]
+    name = "全部文章"
+    url = "/posts/"
+    weight = 4
+  [[menu.main]]
+    name = "关于"
+    url = "/about/"
+    weight = 5
+  [[menu.main]]
+    name = "关于"
+    url = "/about/"
+    weight = 4

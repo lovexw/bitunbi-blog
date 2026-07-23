@@ -1,0 +1,33 @@
+{{ define "content" }}
+<div class="post-list">
+    {{ range .Pages }}
+    <article class="post-card">
+        <h2 class="post-card__title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h2>
+        <div class="post-card__meta">
+            <time>{{ .Date.Format "2006-01-02" }}</time>
+            {{ range .Params.categories }}
+            <span class="tag">{{ . }}</span>
+            {{ end }}
+        </div>
+        <div class="post-card__summary">
+            {{ .Summary | plainify | truncate 120 }}
+        </div>
+        <a href="{{ .RelPermalink }}" class="post-card__readmore">阅读全文 →</a>
+    </article>
+    {{ end }}
+</div>
+
+{{ if gt .Paginator.TotalPages 1 }}
+<div class="pagination">
+    {{ if .Paginator.HasPrev }}
+    <a href="{{ .Paginator.Prev.URL }}">← 上一页</a>
+    {{ end }}
+    <span>{{ .Paginator.PageNumber }} / {{ .Paginator.TotalPages }}</span>
+    {{ if .Paginator.HasNext }}
+    <a href="{{ .Paginator.Next.URL }}">下一页 →</a>
+    {{ end }}
+</div>
+{{ end }}
+{{ end }}

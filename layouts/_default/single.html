@@ -1,0 +1,38 @@
+{{ define "title" }}{{ .Title }} - {{ .Site.Title }}{{ end }}
+
+{{ define "content" }}
+<article class="post">
+    <header class="post__header">
+        <h1 class="post__title">{{ .Title }}</h1>
+        <div class="post__meta">
+            <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+                {{ .Date.Format "2006年01月02日" }}
+            </time>
+            {{ range .Params.categories }}
+            <span class="tag">{{ . }}</span>
+            {{ end }}
+            {{ range .Params.tags }}
+            <span class="tag tag--small">#{{ . }}</span>
+            {{ end }}
+        </div>
+    </header>
+
+    <div class="post__content">
+        {{ .Content }}
+    </div>
+
+    <footer class="post__footer">
+        <div class="post__share">
+            <p>愿你穿越牛熊周期，归来仍是囤币少年。</p>
+        </div>
+        <div class="post__nav">
+            {{ with .PrevInSection }}
+            <a href="{{ .RelPermalink }}" class="post__nav-prev">← {{ .Title }}</a>
+            {{ end }}
+            {{ with .NextInSection }}
+            <a href="{{ .RelPermalink }}" class="post__nav-next">{{ .Title }} →</a>
+            {{ end }}
+        </div>
+    </footer>
+</article>
+{{ end }}

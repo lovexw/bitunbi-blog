@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <link rel="stylesheet" href="/css/style.css">
+    {{ range .Site.Params.customCSS }}
+    <link rel="stylesheet" href="{{ . }}">
+    {{ end }}
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">比特囤币</a>
+            <nav class="nav">
+                {{ range .Site.Menus.main }}
+                <a href="{{ .URL }}">{{ .Name }}</a>
+                {{ end }}
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        {{ block "content" . }}{{ end }}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; {{ now.Format "2006" }} 比特囤币 · 小吴乐意</p>
+            <p class="disclaimer">本站内容仅为个人投资思考，不构成任何投资建议。比特币投资具有高波动性，请理性评估自身风险承受能力。</p>
+        </div>
+    </footer>
+</body>
+</html>
