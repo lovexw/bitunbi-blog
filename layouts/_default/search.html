@@ -1,0 +1,11 @@
+{{ define "title" }}搜索 - {{ .Site.Title }}{{ end }}
+
+{{ define "content" }}
+<div class="search-page">
+    <h1 class="search-title">🔍 搜索文章</h1>
+    <div class="search-box">
+        <input type="text" id="search-input" placeholder="输入关键词搜索..." autocomplete="off" autofocus>
+        <div id="search-results" class="search-results"></div>
+    </div>
+</div>
+{{ end }}

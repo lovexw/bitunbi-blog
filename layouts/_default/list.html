@@ -1,6 +1,6 @@
 {{ define "content" }}
 <div class="post-list">
-    {{ range .Pages }}
+    {{ range .Paginator.Pages }}
     <article class="post-card">
         <h2 class="post-card__title">
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
@@ -20,14 +20,33 @@
 </div>
 
 {{ if gt .Paginator.TotalPages 1 }}
-<div class="pagination">
+<nav class="pagination">
     {{ if .Paginator.HasPrev }}
-    <a href="{{ .Paginator.Prev.URL }}">← 上一页</a>
+    <a href="{{ .Paginator.Prev.URL }}" class="pagination__arrow">←</a>
+    {{ else }}
+    <span class="pagination__arrow pagination__arrow--disabled">←</span>
     {{ end }}
-    <span>{{ .Paginator.PageNumber }} / {{ .Paginator.TotalPages }}</span>
+
+    {{ range first 10 .Paginator.Pagers }}
+        {{ if eq . $ }}
+        <span class="pagination__page pagination__page--active">{{ .PageNumber }}</span>
+        {{ else }}
+        <a href="{{ .URL }}" class="pagination__page">{{ .PageNumber }}</a>
+        {{ end }}
+    {{ end }}
+
+    {{ if lt .Paginator.TotalPages 10 }}
+        <!-- 总页数少于10，全部显示 -->
+    {{ else }}
+        <span class="pagination__dots">…</span>
+        <a href="{{ (index .Paginator.Pagers (sub .Paginator.TotalPages 1)).URL }}" class="pagination__page">{{ .Paginator.TotalPages }}</a>
+    {{ end }}
+
     {{ if .Paginator.HasNext }}
-    <a href="{{ .Paginator.Next.URL }}">下一页 →</a>
+    <a href="{{ .Paginator.Next.URL }}" class="pagination__arrow">→</a>
+    {{ else }}
+    <span class="pagination__arrow pagination__arrow--disabled">→</span>
     {{ end }}
-</div>
+</nav>
 {{ end }}
 {{ end }}
