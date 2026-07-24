@@ -18,6 +18,11 @@ SOURCES = [
         "tags": ["比特币", "囤币", "加密货币"],
     },
     {
+        "dir": "/Users/xw/Downloads/公众号数据/比特囤币02",
+        "category": "比特币",
+        "tags": ["比特币", "囤币", "加密货币"],
+    },
+    {
         "dir": "/Users/xw/Downloads/公众号数据/小吴乐意",
         "category": "生活随笔",
         "tags": ["小吴乐意", "生活", "随笔"],
