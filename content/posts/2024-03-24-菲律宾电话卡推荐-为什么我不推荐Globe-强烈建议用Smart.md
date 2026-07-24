@@ -30,7 +30,7 @@ Globe补卡简直是让我刻骨铭心，又要拿原卡槽和护照，还要提
 
 可以参考我之前的文章：
 
-[菲律宾手机卡丢失补办教程攻略](http://mp.weixin.qq.com/s?__biz=MjM5NDQxOTEyMQ==&mid=2649764270&idx=1&sn=bf358b593daaaaba3d66e9e5ca65320e&chksm=be8c897089fb006687bbbfe09e964d5e7db7e45ddb06eefc656cd86f78685aa2f268bc29635a&scene=21#wechat_redirect)
+[菲律宾手机卡丢失补办教程攻略](/posts/2024-02-26-菲律宾手机卡丢失补办教程攻略/)
 
 1.
 

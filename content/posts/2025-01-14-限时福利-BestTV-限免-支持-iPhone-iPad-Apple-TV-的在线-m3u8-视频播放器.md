@@ -60,7 +60,7 @@ tags: ["数码折腾"]
 
 《通往比特币之路》进度70%
 
-[H.A.B｜低调测试在线书籍系统](https://mp.weixin.qq.com/s?__biz=MjM5NDQxOTEyMQ==&mid=2649766743&idx=1&sn=7becf591de1fb23cddb447deec522367&scene=21#wechat_redirect)
+[H.A.B｜低调测试在线书籍系统](/posts/2025-01-08-H-A-B-低调测试在线书籍系统/)
 
 （下线倒计时4天）
 

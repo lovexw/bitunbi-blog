@@ -14,7 +14,7 @@ tags: ["加密科普"]
 
 错过昨天这篇声讨檄文的可以回顾一下：
 
-[致 Bitcoin Core 开发者，你们的名字，将永远与“背叛”同义](https://mp.weixin.qq.com/s?__biz=MjM5NDQxOTEyMQ==&mid=2649768343&idx=1&sn=69d53884396893252b995f457600896f&scene=21#wechat_redirect)
+[致 Bitcoin Core 开发者，你们的名字，将永远与“背叛”同义](/posts/2025-06-16-致-Bitcoin-Core-开发者-你们的名字-将永远与-背叛-同义/)
 
 当然，我可能情绪化多一些，因为这次Core的行为，并没有达成社区的普遍共识，完全是“暴政”！！！甚至Core开发团队内部都没有达成共识！！！（最近新同步的一些信息了解到）
 
@@ -116,7 +116,7 @@ Core 团队删除 OP_RETURN 限制的 PR，本质上只是向网络提交了一�
 
 还有不少朋友感到担忧，其实你想过没有，你之所以担忧是因为你对比特币了解的还不够“全面”。这就是为什么我之前给你推荐很多免费的优质内容：
 
-[0基础0概念的人来了解比特币（上）](https://mp.weixin.qq.com/s?__biz=MjM5NDQxOTEyMQ==&mid=2649765723&idx=1&sn=b6b19bf363f2cc3ca06a2f383b75647b&scene=21#wechat_redirect)
+[0基础0概念的人来了解比特币（上）](/posts/2024-11-08-0基础0概念的人来了解比特币-上/)
 
 今天担心Core的行为影响比特币，甚至会不会让比特币归零的人，下一次也许又会因为量子计算的谣言而继续担忧，总觉得拿着比特币心里不踏实。
 
@@ -140,13 +140,13 @@ Core 团队删除 OP_RETURN 限制的 PR，本质上只是向网络提交了一�
 
 如无意外变动，近期不再讨论Core团队，以下文章算是一个小系列：
 
-[我的反对也不能阻止“比特币的进化”](https://mp.weixin.qq.com/s?__biz=MjM5NDQxOTEyMQ==&mid=2649768019&idx=1&sn=04b8829e1fe76809f6056c1c3325e1ca&scene=21#wechat_redirect)
+[我的反对也不能阻止“比特币的进化”](/posts/2025-05-15-我的反对也不能阻止-比特币的进化/)
 
-[挖坟贴｜比特币区块里的“病毒”：Stoned 乌龙事件](https://mp.weixin.qq.com/s?__biz=MjM5NDQxOTEyMQ==&mid=2649768028&idx=1&sn=49e100eb1455278f4052903224d141e8&scene=21#wechat_redirect)
+[挖坟贴｜比特币区块里的“病毒”：Stoned 乌龙事件](/posts/2025-05-16-挖坟贴-比特币区块里的-病毒-Stoned-乌龙事件/)
 
-[比特币不是 Core：一个客户端如何引发 “谁代表比特币” 的灵魂拷问？](https://mp.weixin.qq.com/s?__biz=MjM5NDQxOTEyMQ==&mid=2649768294&idx=1&sn=0276027e06b25db5b1ff820899bb3b3b&scene=21#wechat_redirect)
+[比特币不是 Core：一个客户端如何引发 “谁代表比特币” 的灵魂拷问？](/posts/2025-06-10-比特币不是-Core-一个客户端如何引发-谁代表比特币-的灵魂拷问/)
 
-[致 Bitcoin Core 开发者，你们的名字，将永远与“背叛”同义](https://mp.weixin.qq.com/s?__biz=MjM5NDQxOTEyMQ==&mid=2649768343&idx=1&sn=69d53884396893252b995f457600896f&scene=21#wechat_redirect)
+[致 Bitcoin Core 开发者，你们的名字，将永远与“背叛”同义](/posts/2025-06-16-致-Bitcoin-Core-开发者-你们的名字-将永远与-背叛-同义/)
 
 2025年6月17日 凌晨2点
 

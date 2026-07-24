@@ -8,7 +8,7 @@ tags: ["生活随笔"]
 
 欢迎 付费 一对一私聊～
 
-[2026年咖啡会员加量不加价，399元/年](https://mp.weixin.qq.com/s?__biz=MzkyNDg3MDMyMA==&mid=2247487673&idx=2&sn=bd876e7e5c75112e946ba5206c17ade3&scene=21#wechat_redirect)
+[2026年咖啡会员加量不加价，399元/年](/posts/2026-02-05-2026年咖啡会员加量不加价-399元-年/)
 
 关于比特币：https://www.btchao.com
 
