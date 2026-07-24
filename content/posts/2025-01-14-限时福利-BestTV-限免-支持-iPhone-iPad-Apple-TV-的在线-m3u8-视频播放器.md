@@ -3,7 +3,7 @@ title: "[限时福利]BestTV 限免：支持 iPhone、iPad、Apple TV 的在线 
 date: 2025-01-14
 draft: false
 categories: ["生活随笔"]
-tags: ["小吴乐意", "生活", "随笔"]
+tags: ["数码折腾"]
 ---
 
 如果你家里有一台Apple TV，或者打算用苹果手机或者ipad看电视直播，那么这个 [BestTV] app不要错过，目前免费下载。之前我用的是APTV这个软件，这个虽然也可以，但是只能添加一条M3U链接，再增加需要收费。

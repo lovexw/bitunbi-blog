@@ -33,17 +33,36 @@
     <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="/index.xml">
 
     <link rel="stylesheet" href="/css/style.css">
+
+    <!-- 随机阅读：预加载文章列表 -->
+    {{ if not .IsPage }}
+    <script>
+    window.__ALL_POSTS__ = null;
+    window.__loadPosts__ = function(cb) {
+        if (window.__ALL_POSTS__) { cb(window.__ALL_POSTS__); return; }
+        fetch('/index.json')
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                window.__ALL_POSTS__ = data;
+                cb(data);
+            });
+    };
+    </script>
+    {{ end }}
 </head>
 <body>
     <header class="site-header">
-        <div class="container">
+        <div class="container site-header__inner">
             <a href="/" class="logo">
                 <span class="logo__icon">₿</span>
                 <span class="logo__text">{{ .Site.Title }}</span>
             </a>
             <nav class="nav">
                 {{ range .Site.Menus.main }}
-                <a href="{{ .URL }}">{{ .Name }}</a>
+                <a href="{{ .URL }}"{{ if not (hasPrefix .URL "/search") }} target="{{ if eq .URL "/" }}_self{{ else }}_blank{{ end }}"{{ end }}>{{ .Name }}</a>
+                {{ end }}
+                {{ if not .IsPage }}
+                <button class="random-btn" id="random-btn" title="随机阅读一篇文章">🎲 随机阅读</button>
                 {{ end }}
             </nav>
         </div>
@@ -76,10 +95,86 @@
     s.text = JSON.stringify(articleData);
     document.head.appendChild(s);
     </script>
+
+    <!-- GitHub Issues 评论系统 -->
+    <script>
+    (function() {
+        var repo = 'lovexw/bitunbi-blog';
+        var title = {{ .Title | jsonify }};
+        var permalink = {{ .Permalink | jsonify }};
+
+        // 尝试通过 GitHub Issues 加载评论
+        function loadComments() {
+            var container = document.getElementById('giscus-container');
+            if (!container) return;
+
+            // 使用 utterances (GitHub Issues 评论系统)
+            var script = document.createElement('script');
+            script.src = 'https://utteranc.es/client.js';
+            script.setAttribute('repo', repo);
+            script.setAttribute('issue-term', 'title');
+            script.setAttribute('label', '💬评论');
+            script.setAttribute('theme', 'github-light');
+            script.setAttribute('crossorigin', 'anonymous');
+            script.async = true;
+
+            // 暗色模式适配
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                script.setAttribute('theme', 'github-dark');
+            }
+
+            container.appendChild(script);
+        }
+
+        // 延迟加载评论
+        if (document.readyState === 'complete') {
+            loadComments();
+        } else {
+            window.addEventListener('load', loadComments);
+        }
+    })();
+    </script>
     {{ end }}
 
     {{ if eq .Layout "search" }}
     <script src="/js/search.js"></script>
+    {{ end }}
+
+    {{ if .IsPage }}
+    <script>
+    // 文章内所有链接在新窗口打开
+    document.addEventListener('DOMContentLoaded', function() {
+        var content = document.querySelector('.post__content');
+        if (content) {
+            content.querySelectorAll('a[href]').forEach(function(a) {
+                a.setAttribute('target', '_blank');
+                a.setAttribute('rel', 'noopener noreferrer');
+            });
+        }
+    });
+    </script>
+    {{ end }}
+
+    <!-- 随机阅读按钮 -->
+    {{ if not .IsPage }}
+    <script>
+    document.getElementById('random-btn').addEventListener('click', function() {
+        var btn = this;
+        btn.textContent = '🎲 加载中...';
+        btn.disabled = true;
+        window.__loadPosts__(function(posts) {
+            if (!posts || posts.length === 0) {
+                btn.textContent = '🎲 随机阅读';
+                btn.disabled = false;
+                return;
+            }
+            var random = posts[Math.floor(Math.random() * posts.length)];
+            window.open(random.permalink, '_blank');
+            btn.textContent = '🎲 随机阅读';
+            btn.disabled = false;
+        });
+    });
+    </script>
     {{ end }}
 </body>
 </html>

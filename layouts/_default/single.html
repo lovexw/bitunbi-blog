@@ -12,7 +12,7 @@
             <span class="tag">{{ . }}</span>
             {{ end }}
             {{ range .Params.tags }}
-            <span class="tag tag--small">#{{ . }}</span>
+            <span class="tag tag--small">{{ . }}</span>
             {{ end }}
         </div>
     </header>
@@ -35,4 +35,12 @@
         </div>
     </footer>
 </article>
+
+<!-- 评论区 -->
+<section class="comments">
+    <h2 class="comments__title">💬 评论区</h2>
+    <div id="giscus-container" class="comments__container">
+        <p class="comments__loading">评论加载中... 如果长时间未显示，可能是 GitHub 访问受限。</p>
+    </div>
+</section>
 {{ end }}

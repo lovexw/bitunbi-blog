@@ -3,7 +3,7 @@ title: "比特币认知浅谈：Don't Trust, Verify."
 date: 2026-02-12
 draft: false
 categories: ["比特币"]
-tags: ["比特币", "囤币", "加密货币"]
+tags: ["读书思考"]
 ---
 
 ![图片](/images/比特币认知浅谈_Don_t_Trust__Verify__1_17799546829780.4669076170146441.png)

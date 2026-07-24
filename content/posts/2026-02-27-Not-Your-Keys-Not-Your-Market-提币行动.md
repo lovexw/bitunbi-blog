@@ -3,7 +3,7 @@ title: "Not Your Keys, Not Your Market，提币行动！"
 date: 2026-02-27
 draft: false
 categories: ["比特币"]
-tags: ["比特币", "囤币", "加密货币"]
+tags: ["生活随笔"]
 ---
 
 欢迎 付费 一对一私聊～

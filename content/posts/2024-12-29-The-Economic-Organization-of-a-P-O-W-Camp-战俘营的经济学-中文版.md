@@ -3,7 +3,7 @@ title: "The Economic Organization of a P.O.W. Camp《战俘营的经济学》中
 date: 2024-12-29
 draft: false
 categories: ["生活随笔"]
-tags: ["小吴乐意", "生活", "随笔"]
+tags: ["宏观金融"]
 ---
 
 Radford，R.A The Economic Organisation of a P.O.W Camp. Economica, New Series, 1945,Nov,12(48):189-201.本文为刘杰、魏广森译）

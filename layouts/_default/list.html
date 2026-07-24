@@ -1,52 +1,98 @@
 {{ define "content" }}
-<div class="post-list">
-    {{ range .Paginator.Pages }}
-    <article class="post-card">
-        <h2 class="post-card__title">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </h2>
-        <div class="post-card__meta">
-            <time>{{ .Date.Format "2006-01-02" }}</time>
-            {{ range .Params.categories }}
-            <span class="tag">{{ . }}</span>
+<div class="layout-with-sidebar">
+    <!-- 主内容区 -->
+    <div class="layout-main">
+        <div class="post-list">
+            {{ range .Paginator.Pages }}
+            <article class="post-card">
+                <h2 class="post-card__title">
+                    <a href="{{ .RelPermalink }}" target="_blank" rel="noopener">{{ .Title }}</a>
+                </h2>
+                <div class="post-card__meta">
+                    <time>{{ .Date.Format "2006-01-02" }}</time>
+                    {{ range .Params.categories }}
+                    <span class="tag">{{ . }}</span>
+                    {{ end }}
+                    {{ range .Params.tags }}
+                    <span class="tag tag--small">{{ . }}</span>
+                    {{ end }}
+                </div>
+                <div class="post-card__summary">
+                    {{ .Summary | plainify | truncate 120 }}
+                </div>
+                <a href="{{ .RelPermalink }}" class="post-card__readmore" target="_blank" rel="noopener">阅读全文 →</a>
+            </article>
             {{ end }}
         </div>
-        <div class="post-card__summary">
-            {{ .Summary | plainify | truncate 120 }}
-        </div>
-        <a href="{{ .RelPermalink }}" class="post-card__readmore">阅读全文 →</a>
-    </article>
-    {{ end }}
-</div>
 
-{{ if gt .Paginator.TotalPages 1 }}
-<nav class="pagination">
-    {{ if .Paginator.HasPrev }}
-    <a href="{{ .Paginator.Prev.URL }}" class="pagination__arrow">←</a>
-    {{ else }}
-    <span class="pagination__arrow pagination__arrow--disabled">←</span>
-    {{ end }}
+        {{ if gt .Paginator.TotalPages 1 }}
+        <nav class="pagination">
+            {{ if .Paginator.HasPrev }}
+            <a href="{{ .Paginator.Prev.URL }}" class="pagination__arrow">←</a>
+            {{ else }}
+            <span class="pagination__arrow pagination__arrow--disabled">←</span>
+            {{ end }}
 
-    {{ range first 10 .Paginator.Pagers }}
-        {{ if eq . $ }}
-        <span class="pagination__page pagination__page--active">{{ .PageNumber }}</span>
-        {{ else }}
-        <a href="{{ .URL }}" class="pagination__page">{{ .PageNumber }}</a>
+            {{ range first 10 .Paginator.Pagers }}
+                {{ if eq . $ }}
+                <span class="pagination__page pagination__page--active">{{ .PageNumber }}</span>
+                {{ else }}
+                <a href="{{ .URL }}" class="pagination__page">{{ .PageNumber }}</a>
+                {{ end }}
+            {{ end }}
+
+            {{ if lt .Paginator.TotalPages 10 }}
+                <!-- 总页数少于10，全部显示 -->
+            {{ else }}
+                <span class="pagination__dots">…</span>
+                <a href="{{ (index .Paginator.Pagers (sub .Paginator.TotalPages 1)).URL }}" class="pagination__page">{{ .Paginator.TotalPages }}</a>
+            {{ end }}
+
+            {{ if .Paginator.HasNext }}
+            <a href="{{ .Paginator.Next.URL }}" class="pagination__arrow">→</a>
+            {{ else }}
+            <span class="pagination__arrow pagination__arrow--disabled">→</span>
+            {{ end }}
+        </nav>
         {{ end }}
-    {{ end }}
+    </div>
 
-    {{ if lt .Paginator.TotalPages 10 }}
-        <!-- 总页数少于10，全部显示 -->
-    {{ else }}
-        <span class="pagination__dots">…</span>
-        <a href="{{ (index .Paginator.Pagers (sub .Paginator.TotalPages 1)).URL }}" class="pagination__page">{{ .Paginator.TotalPages }}</a>
-    {{ end }}
+    <!-- 左侧边栏 -->
+    <aside class="sidebar">
+        <div class="sidebar-card">
+            <div class="sidebar-card__icon">₿</div>
+            <h3 class="sidebar-card__title">小吴乐意</h3>
+            <p class="sidebar-card__desc">比特币世界观 · 生活随笔</p>
+            <p class="sidebar-card__slogan">"时间是比特币的朋友，市场奖励的是时间，不是精准。"</p>
+            <div class="sidebar-card__stats">
+                <div class="sidebar-stat">
+                    <span class="sidebar-stat__num">{{ len (where .Site.RegularPages "Section" "posts") }}</span>
+                    <span class="sidebar-stat__label">篇文章</span>
+                </div>
+                <div class="sidebar-stat">
+                    <span class="sidebar-stat__num">20</span>
+                    <span class="sidebar-stat__label">个标签</span>
+                </div>
+            </div>
+            <a href="/about/" class="sidebar-card__link">关于本站 →</a>
+        </div>
 
-    {{ if .Paginator.HasNext }}
-    <a href="{{ .Paginator.Next.URL }}" class="pagination__arrow">→</a>
-    {{ else }}
-    <span class="pagination__arrow pagination__arrow--disabled">→</span>
-    {{ end }}
-</nav>
-{{ end }}
+        <div class="sidebar-card">
+            <h3 class="sidebar-card__title">热门标签</h3>
+            <div class="tag-cloud">
+                {{ range first 20 .Site.Taxonomies.tags.ByCount }}
+                <a href="{{ "/tags/" | relURL }}{{ .Term | urlize }}/" class="tag tag--cloud">{{ .Term }}</a>
+                {{ end }}
+            </div>
+        </div>
+
+        <div class="sidebar-card">
+            <h3 class="sidebar-card__title">分类导航</h3>
+            <a href="/categories/比特币/" class="sidebar-card__link">📊 比特币</a>
+            <a href="/categories/生活随笔/" class="sidebar-card__link">✍️ 生活随笔</a>
+            <a href="/posts/" class="sidebar-card__link">📚 全部文章</a>
+            <a href="/search/" class="sidebar-card__link">🔍 搜索文章</a>
+        </div>
+    </aside>
+</div>
 {{ end }}

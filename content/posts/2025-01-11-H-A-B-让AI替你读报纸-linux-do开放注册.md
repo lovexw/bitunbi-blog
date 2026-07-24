@@ -3,7 +3,7 @@ title: "H.A.B｜让AI替你读报纸+linux.do开放注册"
 date: 2025-01-11
 draft: false
 categories: ["生活随笔"]
-tags: ["小吴乐意", "生活", "随笔"]
+tags: ["AI与技术", "读书思考"]
 ---
 
 ![图片](/images/H_A_B_让AI替你读报纸_linux_do开放注册_1_17799554438020.4240063238667292.png)
