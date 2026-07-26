@@ -684,6 +684,15 @@ body {
 }
 
 @media (max-width: 768px) {
+  .post__content table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 768px) {
   .post__content table { font-size: 13px; }
   .post__content th { padding: 8px 10px; font-size: 12px; }
   .post__content td { padding: 6px 10px; }
@@ -1153,3 +1162,5 @@ mark {
   .sidebar-card { padding: 16px 12px; }
   .site-footer { padding: 24px 0; margin-top: 40px; }
 }
+
+
