@@ -47,8 +47,19 @@
             }
 
             try {
-                // 用密码做 key，解密 AES
-                var key = CryptoJS.enc.Utf8.parse(password);
+                // 用密码做 key，解密 AES-128-ECB
+                // 与 Python 端一致：密码 UTF-8 字节，不足16字节用 \x00 补齐
+                var pwStr = unescape(encodeURIComponent(password));
+                var bytes = [];
+                for (var i = 0; i < 16; i++) {
+                    bytes.push(i < pwStr.length ? pwStr.charCodeAt(i) : 0);
+                }
+                // 构造 CryptoJS WordArray (big-endian, 4 bytes per word)
+                var words = [0, 0, 0, 0];
+                for (var i = 0; i < 16; i++) {
+                    words[i >>> 2] |= bytes[i] << (24 - (i % 4) * 8);
+                }
+                var key = CryptoJS.lib.WordArray.create(words, 16);
                 var decrypted = CryptoJS.AES.decrypt(cipherText, key, {
                     mode: CryptoJS.mode.ECB,
                     padding: CryptoJS.pad.Pkcs7
