@@ -756,3 +756,66 @@ mark {
     font-size: 13px;
   }
 }
+
+/* ====== 文章加密样式 ====== */
+.password-lock {
+  max-width: 420px;
+  margin: 60px auto;
+  padding: 40px 30px;
+  text-align: center;
+  background: var(--bg-card);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+.password-lock__icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+.password-lock__hint {
+  color: var(--text-secondary);
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+.password-lock__input-wrap {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+.password-lock__input {
+  flex: 1;
+  max-width: 240px;
+  padding: 10px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+  background: var(--bg);
+  color: var(--text);
+}
+.password-lock__input:focus {
+  border-color: var(--accent);
+}
+.password-lock__btn {
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.password-lock__btn:hover {
+  opacity: 0.85;
+}
+.password-lock__error {
+  color: #e53e3e;
+  font-size: 14px;
+  margin-top: 12px;
+  min-height: 20px;
+}
+.post-card__summary--locked {
+  color: var(--text-secondary);
+  font-style: italic;
+}

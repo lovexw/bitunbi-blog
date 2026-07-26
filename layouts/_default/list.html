@@ -17,10 +17,14 @@
                     <span class="tag tag--small">{{ . }}</span>
                     {{ end }}
                 </div>
+                {{ if .Params.encrypted }}
+                <div class="post-card__summary post-card__summary--locked">🔒 这篇文章已加密</div>
+                {{ else }}
                 <div class="post-card__summary">
                     {{ .Summary | plainify | truncate 120 }}
                 </div>
-                <a href="{{ .RelPermalink }}" class="post-card__readmore" target="_blank" rel="noopener">阅读全文 →</a>
+                {{ end }}
+                <a href="{{ .RelPermalink }}" class="post-card__readmore" target="_blank" rel="noopener">{{ if .Params.encrypted }}输入密码查看 →{{ else }}阅读全文 →{{ end }}</a>
             </article>
             {{ end }}
         </div>
