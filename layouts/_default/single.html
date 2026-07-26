@@ -33,6 +33,7 @@
     <div id="encrypted-data" data-cipher="{{ .Params.encrypted | safeHTMLAttr }}" style="display:none;"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
     (function() {
         var cipherText = document.getElementById('encrypted-data').getAttribute('data-cipher');
@@ -70,9 +71,10 @@
                     throw new Error('empty');
                 }
 
-                // 解密成功，替换内容
+                // 解密成功，将 Markdown 渲染为 HTML
+                var renderedHtml = marked.parse(html);
                 var article = lockDiv.closest('article');
-                lockDiv.outerHTML = '<div class="post__content" id="decrypted-content">' + html + '</div>';
+                lockDiv.outerHTML = '<div class="post__content" id="decrypted-content">' + renderedHtml + '</div>';
 
                 // 文章内链接新窗口打开
                 var content = document.getElementById('decrypted-content');
