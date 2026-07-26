@@ -13,7 +13,6 @@
     <div class="layout-with-sidebar">
         <div class="layout-main">
             <section class="recent-posts">
-                <h2>最新文章</h2>
                 <div class="post-list">
                     {{ range first 10 (where .Site.RegularPages "Section" "posts") }}
                     <article class="post-card">

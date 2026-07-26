@@ -484,7 +484,7 @@ body {
   flex-wrap: wrap;
 }
 
-.post-card__meta time { font-weight: 500; }
+.post-card__meta time { font-weight: 600; color: var(--text-secondary); }
 
 .tag {
   display: inline-block;
@@ -552,7 +552,7 @@ body {
 
 .post__meta {
   font-size: 13px;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   display: flex;
   gap: 8px;
   justify-content: center;
