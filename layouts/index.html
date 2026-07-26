@@ -3,10 +3,10 @@
     <section class="hero">
         <h1><span class="logo__icon">₿</span> 小吴乐意</h1>
         <p class="hero__subtitle">比特币世界观 · 生活随笔 · 数据驱动的长期主义</p>
-        <p class="hero__desc">时间是比特币的朋友，市场奖励的是时间，不是精准。</p>
+        <p class="hero__desc">"时间是比特币的朋友，市场奖励的是时间，不是精准。"</p>
         <div class="hero__search">
-            <input type="text" id="home-search" placeholder="搜索文章..." autocomplete="off">
-            <button onclick="window.location.href='/search/?q='+encodeURIComponent(document.getElementById('home-search').value)">🔍</button>
+            <input type="text" id="home-search" placeholder="搜索文章标题、标签、内容..." autocomplete="off">
+            <button onclick="window.location.href='/search/?q='+encodeURIComponent(document.getElementById('home-search').value)" aria-label="搜索">🔍</button>
         </div>
     </section>
 
@@ -25,12 +25,12 @@
                             {{ range .Params.categories }}
                             <span class="tag">{{ . }}</span>
                             {{ end }}
-                            {{ range .Params.tags }}
+                            {{ range first 3 .Params.tags }}
                             <span class="tag tag--small">{{ . }}</span>
                             {{ end }}
                         </div>
                         {{ if .Params.encrypted }}
-                        <div class="post-card__summary post-card__summary--locked">🔒 这篇文章已加密</div>
+                        <div class="post-card__summary post-card__summary--locked">🔒 这篇文章已加密，需输入密码查看</div>
                         {{ else }}
                         <div class="post-card__summary">
                             {{ .Summary | plainify | truncate 100 }}
@@ -40,7 +40,7 @@
                     </article>
                     {{ end }}
                 </div>
-                <a href="/posts/" class="view-all">查看全部文章 →</a>
+                <a href="/posts/" class="view-all">查看全部 {{ len (where .Site.RegularPages "Section" "posts") }} 篇文章 →</a>
             </section>
         </div>
 
