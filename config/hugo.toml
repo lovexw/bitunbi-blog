@@ -70,7 +70,7 @@ enableSitemap = true
 [outputFormats]
   [outputFormats.RSS]
     mediatype = "application/rss+xml"
-    baseName = "index"
+    baseName = "feed"
     isPlainText = false
 
 [permalinks]
