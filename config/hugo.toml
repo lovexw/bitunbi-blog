@@ -67,5 +67,11 @@ enableSitemap = true
   filename = "sitemap.xml"
   priority = 0.5
 
+[outputFormats]
+  [outputFormats.RSS]
+    mediatype = "application/rss+xml"
+    baseName = "index"
+    isPlainText = false
+
 [permalinks]
   posts = "/posts/:slug/"

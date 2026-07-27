@@ -942,9 +942,12 @@ mark {
   color: var(--text-secondary);
   text-decoration: none;
   transition: color var(--transition);
+  font-size: 13px;
 }
 
 .site-footer a:hover { color: var(--accent); }
+
+.site-footer p a { font-size: 13px; }
 
 .disclaimer {
   font-size: 12px !important;

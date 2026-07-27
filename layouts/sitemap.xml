@@ -1,0 +1,18 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{{ range .Data.Pages }}
+  <url>
+    <loc>{{ .Permalink }}</loc>
+    {{ with .Lastmod }}<lastmod>{{ .Format "2006-01-02T15:04:05Z07:00" }}</lastmod>{{ end }}
+    {{ if eq .Type "posts" }}
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    {{ else if .IsHome }}
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    {{ else }}
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    {{ end }}
+  </url>
+{{ end }}
+</urlset>
