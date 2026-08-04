@@ -4,6 +4,7 @@ date: 2024-12-29
 draft: false
 categories: ["生活随笔"]
 tags: ["宏观金融"]
+slug: "2024-12-29-1"
 ---
 
 Radford，R.A The Economic Organisation of a P.O.W Camp. Economica, New Series, 1945,Nov,12(48):189-201.本文为刘杰、魏广森译）
