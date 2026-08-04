@@ -728,6 +728,27 @@ body {
   font-weight: 500;
 }
 
+.post__qrcode {
+  text-align: center;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.post__qrcode img {
+  width: 180px;
+  height: auto;
+  border-radius: var(--radius-sm);
+  display: block;
+  margin: 0 auto 8px;
+}
+
+.post__qrcode p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
 .post__nav {
   display: flex;
   justify-content: space-between;
