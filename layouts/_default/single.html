@@ -1,6 +1,15 @@
 {{ define "title" }}{{ .Title }} - {{ .Site.Title }}{{ end }}
 
 {{ define "content" }}
+{{ "<!-- Breadcrumb SEO -->" | safeHTML }}
+<nav class="breadcrumb" aria-label="breadcrumb">
+    <a href="/">首页</a> <span class="breadcrumb__sep">/</span>
+    {{ range .Params.categories }}
+    <a href="/categories/{{ . | urlize }}/">{{ . }}</a> <span class="breadcrumb__sep">/</span>
+    {{ end }}
+    <span class="breadcrumb__current">{{ .Title | truncate 30 }}</span>
+</nav>
+
 <article class="post">
     <header class="post__header">
         <h1 class="post__title">{{ .Title }}</h1>

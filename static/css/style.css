@@ -1203,4 +1203,19 @@ mark {
   .site-footer { padding: 24px 0; margin-top: 40px; }
 }
 
+/* ========== Breadcrumb 面包屑 ========== */
+.breadcrumb {
+  font-size: 13px;
+  color: var(--text-secondary, #666);
+  margin-bottom: 16px;
+  padding: 8px 0;
+}
+.breadcrumb a {
+  color: var(--primary, #f7931a);
+  text-decoration: none;
+}
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb__sep { margin: 0 6px; color: var(--text-muted, #999); }
+.breadcrumb__current { color: var(--text-secondary, #666); }
+
 

@@ -1,16 +1,19 @@
 baseURL = "https://blog.btchao.com"
 languageCode = "zh-cn"
-title = "小吴乐意"
-description = "小吴乐意 - 比特币世界观 & 生活随笔"
+title = "小吴乐意 | 比特币投资分析与长期主义博客"
+description = "比特币投资分析、市场数据解读与长期主义投资思考。868篇原创内容涵盖比特币价格分析、ETF资金流、减半周期、区块链技术与囤币策略，记录一个HODLer的穿越牛熊之路。"
 pagination.pagerSize = 10
 enableRobotsTXT = true
 enableSitemap = true
 
 [params]
   author = "小吴乐意"
-  description = "比特币世界观 & 生活随笔 | 数据驱动的长期主义"
+  description = "比特币投资分析、市场数据解读与长期主义投资思考。868篇原创内容涵盖比特币价格分析、ETF资金流、减半周期、区块链技术与囤币策略，记录一个HODLer的穿越牛熊之路。"
   siteUrl = "https://btchao.com"
   dateFormat = "2006-01-02"
+  keywords = "比特币,Bitcoin,比特币投资,比特币分析,比特币价格,加密货币,区块链,囤币,HODL,定投,ETF,减半周期,数字货币,加密货币投资,比特币入门"
+  twitter = "@btchao"
+  ogImage = "/images/og-default.png"
 
   [[params.social]]
     name = "官网"
@@ -63,9 +66,9 @@ enableSitemap = true
     weight = 6
 
 [sitemap]
-  changefreq = "weekly"
+  changefreq = "daily"
   filename = "sitemap.xml"
-  priority = 0.5
+  priority = 0.7
 
 [outputFormats]
   [outputFormats.RSS]
