@@ -49,20 +49,20 @@ enableSitemap = true
     url = "/categories/比特币/"
     weight = 2
   [[menu.main]]
+    name = "☕ 咖啡会员"
+    url = "/tags/咖啡会员/"
+    weight = 3
+  [[menu.main]]
     name = "生活随笔"
     url = "/categories/生活随笔/"
-    weight = 3
+    weight = 4
   [[menu.main]]
     name = "全部文章"
     url = "/posts/"
-    weight = 4
+    weight = 5
   [[menu.main]]
     name = "🔍 搜索"
     url = "/search/"
-    weight = 5
-  [[menu.main]]
-    name = "☕ 咖啡会员"
-    url = "/posts/2026-02-05-1/"
     weight = 6
   [[menu.main]]
     name = "关于"
