@@ -1,6 +1,6 @@
 baseURL = "https://blog.btchao.com"
 languageCode = "zh-cn"
-title = "小吴乐意 | 比特币投资分析与长期主义博客"
+title = "比特囤币"
 description = "比特币投资分析、市场数据解读与长期主义投资思考。868篇原创内容涵盖比特币价格分析、ETF资金流、减半周期、区块链技术与囤币策略，记录一个HODLer的穿越牛熊之路。"
 pagination.pagerSize = 10
 enableRobotsTXT = true
@@ -61,9 +61,13 @@ enableSitemap = true
     url = "/search/"
     weight = 5
   [[menu.main]]
+    name = "☕ 咖啡会员"
+    url = "/posts/2026-02-05-1/"
+    weight = 6
+  [[menu.main]]
     name = "关于"
     url = "/about/"
-    weight = 6
+    weight = 7
 
 [sitemap]
   changefreq = "daily"
