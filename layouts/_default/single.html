@@ -156,6 +156,56 @@
             <a href="{{ .RelPermalink }}" class="post__nav-next">{{ .Title }} →</a>
             {{ end }}
         </div>
+
+        <!-- 相关文章（SEO内链） -->
+        {{ $related := slice }}
+        {{ $currentCategories := .Params.categories }}
+        {{ $currentTags := .Params.tags }}
+        {{ $currentPermalink := .Permalink }}
+
+        <!-- 优先相同分类 -->
+        {{ range where (where .Site.RegularPages "Section" "posts") "Permalink" "ne" $currentPermalink }}
+            {{ if .Params.categories }}
+                {{ $hasCommonCat := false }}
+                {{ range .Params.categories }}
+                    {{ if in $currentCategories . }}
+                        {{ $hasCommonCat = true }}
+                    {{ end }}
+                {{ end }}
+                {{ if $hasCommonCat }}
+                    {{ $related = $related | append . }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+
+        <!-- 其父相同标签 -->
+        {{ range where (where .Site.RegularPages "Section" "posts") "Permalink" "ne" $currentPermalink }}
+            {{ if .Params.tags }}
+                {{ $hasCommonTag := false }}
+                {{ range .Params.tags }}
+                    {{ if in $currentTags . }}
+                        {{ $hasCommonTag = true }}
+                    {{ end }}
+                {{ end }}
+                {{ if $hasCommonTag }}
+                    {{ $related = $related | append . }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+
+        {{ if gt (len $related) 0 }}
+        <section class="related-posts">
+            <h2 class="related-posts__title">📚 相关文章</h2>
+            <div class="related-posts__list">
+                {{ range first 4 (uniq $related) }}
+                <a href="{{ .RelPermalink }}" class="related-post">
+                    <div class="related-post__title">{{ .Title | truncate 40 }}</div>
+                    <div class="related-post__meta">{{ .Date.Format "2006-01-02" }}</div>
+                </a>
+                {{ end }}
+            </div>
+        </section>
+        {{ end }}
     </footer>
 </article>
 

@@ -102,6 +102,7 @@
     </footer>
 
     {{ if .IsPage }}
+    <!-- Article Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -110,23 +111,52 @@
         "description": {{ $desc | jsonify }},
         "datePublished": {{ .Date.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
         "dateModified": {{ (.Lastmod | default .Date).Format "2006-01-02T15:04:05Z07:00" | jsonify }},
-        "author": { "@type": "Person", "name": {{ .Site.Params.author | jsonify }} },
-        "publisher": { "@type": "Person", "name": {{ .Site.Params.author | jsonify }} },
+        "author": { "@type": "Person", "name": {{ .Site.Params.author | jsonify }}, "url": "https://btchao.com" },
+        "publisher": {
+            "@type": "Person",
+            "name": {{ .Site.Params.author | jsonify }},
+            "url": "https://btchao.com",
+            "image": {{ printf "%simages/bitcoin-logo.png" .Site.BaseURL | jsonify }}
+        },
         "mainEntityOfPage": { "@type": "WebPage", "@id": {{ .Permalink | jsonify }} },
         "url": {{ .Permalink | jsonify }},
+        "image": {{ printf "%simages/bitcoin-logo.png" .Site.BaseURL | jsonify }},
         "articleSection": {{ with .Params.categories }}{{ (index . 0) | jsonify }}{{ else }}"比特币"{{ end }},
-        "keywords": {{ with .Params.tags }}{{ (delimit . ", ") | jsonify }}{{ else }}"比特币,Bitcoin,投资分析"{{ end }}
+        "keywords": {{ with .Params.tags }}{{ (delimit . ", ") | jsonify }}{{ else }}"比特币,Bitcoin,投资分析"{{ end }},
+        "inLanguage": "zh-CN"
+    }
+    </script>
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "首页", "item": {{ .Site.BaseURL | jsonify }} },
+            {{ range .Params.categories }}
+            { "@type": "ListItem", "position": 2, "name": {{ . | jsonify }}, "item": {{ printf "%scategories/%s/" $.Site.BaseURL (. | urlize) | jsonify }} },
+            {{ end }}
+            { "@type": "ListItem", "position": 3, "name": {{ .Title | truncate 30 | jsonify }}, "item": {{ .Permalink | jsonify }} }
+        ]
     }
     </script>
     {{ else }}
+    <!-- WebSite + Organization Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": {{ .Site.Title | jsonify }},
+        "alternateName": "小吴乐意",
         "url": {{ .Site.BaseURL | jsonify }},
         "description": {{ .Site.Params.description | jsonify }},
         "inLanguage": "zh-CN",
+        "publisher": {
+            "@type": "Person",
+            "name": {{ .Site.Params.author | jsonify }},
+            "url": "https://btchao.com",
+            "image": {{ printf "%simages/bitcoin-logo.png" .Site.BaseURL | jsonify }}
+        },
         "potentialAction": {
             "@type": "SearchAction",
             "target": {{ printf "%ssearch/?q={query}" .Site.BaseURL | jsonify }},

@@ -1208,4 +1208,210 @@ mark {
 .breadcrumb__sep { margin: 0 6px; color: var(--text-muted, #999); }
 .breadcrumb__current { color: var(--text-secondary, #666); }
 
+/* ========== 404 Page ========== */
+.not-found {
+  text-align: center;
+  padding: 80px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.not-found__icon {
+  font-size: 64px;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.not-found__title {
+  font-size: 72px;
+  font-weight: 900;
+  color: var(--text);
+  margin: 0 0 12px;
+  letter-spacing: -2px;
+}
+.not-found__desc {
+  font-size: 16px;
+  color: var(--text-secondary, #666);
+  margin: 0 0 32px;
+}
+.not-found__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+.not-found__link {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 8px;
+  background: var(--accent-light);
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all var(--transition);
+}
+.not-found__link:hover {
+  background: var(--accent);
+  color: #fff;
+}
 
+/* ========== Related Posts ========== */
+.related-posts {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+.related-posts__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 16px;
+  color: var(--text);
+}
+.related-posts__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 768px) {
+  .related-posts__list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.related-post {
+  display: block;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text);
+  transition: all var(--transition);
+}
+.related-post:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+.related-post__title {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 0 4px;
+  line-height: 1.4;
+}
+.related-post__meta {
+  font-size: 12px;
+  color: var(--text-muted, #999);
+}
+
+
+
+/* ========== Bitcoin Guide Page ========== */
+.bitcoin-guide-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+.guide-sections {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 32px;
+}
+@media (min-width: 768px) {
+  .guide-sections {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.guide-section {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+  transition: all var(--transition);
+}
+.guide-section:hover {
+  border-color: var(--accent);
+  box-shadow: 0 2px 12px rgba(247, 147, 26, 0.08);
+}
+.guide-section__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: var(--text);
+}
+.guide-section__desc {
+  font-size: 13px;
+  color: var(--text-muted, #999);
+  margin: 0 0 16px;
+}
+.guide-section__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.guide-section__list li {
+  padding: 6px 0;
+  font-size: 14px;
+}
+.guide-section__list li a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.guide-section__list li a:hover {
+  text-decoration: underline;
+}
+.guide-footer {
+  text-align: center;
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--text-secondary, #666);
+}
+.guide-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ========== Related Posts ========== */
+.related-posts {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+.related-posts__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 16px;
+  color: var(--text);
+}
+.related-posts__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 768px) {
+  .related-posts__list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.related-post {
+  display: block;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition);
+}
+.related-post:hover {
+  border-color: var(--accent);
+  background: rgba(247, 147, 26, 0.04);
+}
+.related-post__title {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 4px;
+  color: var(--text);
+}
+.related-post__meta {
+  font-size: 12px;
+  color: var(--text-muted, #999);
+}

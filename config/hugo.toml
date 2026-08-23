@@ -1,14 +1,14 @@
 baseURL = "https://blog.btchao.com"
 languageCode = "zh-cn"
-title = "比特囤币"
-description = "比特币投资分析、市场数据解读与长期主义投资思考。868篇原创内容涵盖比特币价格分析、ETF资金流、减半周期、区块链技术与囤币策略，记录一个HODLer的穿越牛熊之路。"
+title = "比特囤币｜比特币投资、囤币与长期主义"
+description = "专注比特币投资、囤币与长期主义，记录 Bitcoin 市场周期、ETF、链上数据、宏观金融、私钥安全以及个人投资与生活思考。"
 pagination.pagerSize = 10
 enableRobotsTXT = true
 enableSitemap = true
 
 [params]
   author = "小吴乐意"
-  description = "比特币投资分析、市场数据解读与长期主义投资思考。868篇原创内容涵盖比特币价格分析、ETF资金流、减半周期、区块链技术与囤币策略，记录一个HODLer的穿越牛熊之路。"
+  description = "专注比特币投资、囤币与长期主义，记录 Bitcoin 市场周期、ETF、链上数据、宏观金融、私钥安全以及个人投资与生活思考。"
   siteUrl = "https://btchao.com"
   dateFormat = "2006-01-02"
   keywords = "比特币,Bitcoin,比特币投资,比特币分析,比特币价格,加密货币,区块链,囤币,HODL,定投,ETF,减半周期,数字货币,加密货币投资,比特币入门"
@@ -45,19 +45,19 @@ enableSitemap = true
     url = "/"
     weight = 1
   [[menu.main]]
-    name = "比特币"
+    name = "₿ 比特币"
     url = "/categories/比特币/"
     weight = 2
   [[menu.main]]
-    name = "☕ 咖啡会员"
-    url = "/tags/咖啡会员/"
+    name = "📖 比特币指南"
+    url = "/bitcoin-guide/"
     weight = 3
   [[menu.main]]
-    name = "生活随笔"
+    name = "✍️ 生活随笔"
     url = "/categories/生活随笔/"
     weight = 4
   [[menu.main]]
-    name = "全部文章"
+    name = "📚 全部文章"
     url = "/posts/"
     weight = 5
   [[menu.main]]
