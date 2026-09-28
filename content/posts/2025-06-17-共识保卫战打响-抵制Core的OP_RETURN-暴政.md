@@ -153,6 +153,6 @@ Core 团队删除 OP_RETURN 限制的 PR，本质上只是向网络提交了一�
 
 （完）
 
-[6.16 约900万比特币在3年多的时间里未移动](https://mp.weixin.qq.com/s?__biz=MzkyNDg3MDMyMA==&mid=2247485873&idx=1&sn=aa3eab987fda8bad25ccbba115bd64d4&scene=21#wechat_redirect)
+6.16 约900万比特币在3年多的时间里未移动[暂时失效]
 
 比特币动态：

@@ -57,7 +57,7 @@ slug: "2025-01-14-2"
 
 比特币问答社区：https://wd.btchao.com
 
-比特币网站导航：https://dh.btchao.com
+比特币网站导航：dh.btchao.com [暂时失效]
 
 《通往比特币之路》进度70%
 
@@ -67,7 +67,7 @@ slug: "2025-01-14-2"
 
 ![图片](/images/_限时福利_BestTV_限免_支持_iPhone_iPad_Apple_TV_的在线_m3u8_视频播放器_11_17799554426850.5443763070792839.webp)
 
-[1.14 比特币又“没价值”了？](https://mp.weixin.qq.com/s?__biz=MzkyNDg3MDMyMA==&mid=2247484402&idx=1&sn=6f861cf5d485fd113785772e0e4b0fac&scene=21#wechat_redirect)
+1.14 比特币又“没价值”了？[暂时失效]
 
 关注小号：
 

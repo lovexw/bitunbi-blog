@@ -49,7 +49,7 @@ so，刚注册，就看到一个小福利，免费领取华尔街日报。
 
 比特币问答社区：https://wd.btchao.com
 
-比特币网站导航：https://dh.btchao.com
+比特币网站导航：dh.btchao.com [暂时失效]
 
 《通往比特币之路》进度70%
 
@@ -61,7 +61,7 @@ H.A.B｜俱乐部 可能这两天开启内测交流
 
 （新）
 
-[1.10 比特币的“恐惧”情绪蔓延](https://mp.weixin.qq.com/s?__biz=MzkyNDg3MDMyMA==&mid=2247484337&idx=1&sn=f64c1f797caf7f9ef946ca41522a0a97&scene=21#wechat_redirect)
+1.10 比特币的“恐惧”情绪蔓延[暂时失效]
 
 关注小号：
 

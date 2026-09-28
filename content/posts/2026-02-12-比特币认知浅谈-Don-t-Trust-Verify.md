@@ -13,7 +13,7 @@ slug: "2026-02-12-1"
 
 昨天聊了普通人投资比特币的门槛
 
-[[深度好文]普通人投资比特币的“门槛”](https://mp.weixin.qq.com/s?__biz=MzkyNDg3MDMyMA==&mid=2247487723&idx=1&sn=4ad95c0d0e0ad4d0cba1fcbcd517200a&scene=21#wechat_redirect)
+[[深度好文]普通人投资比特币的“门槛”](/posts/2026-02-11-1/)
 
 今天简单聊一下更重要的认知，依然是颠覆性认知。
 
