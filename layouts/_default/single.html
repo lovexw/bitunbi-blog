@@ -195,7 +195,7 @@
 
         {{ if gt (len $related) 0 }}
         <section class="related-posts">
-            <h2 class="related-posts__title">📚 相关文章</h2>
+            <h2 class="related-posts__title">相关文章</h2>
             <div class="related-posts__list">
                 {{ range first 4 (uniq $related) }}
                 <a href="{{ .RelPermalink }}" class="related-post">
@@ -211,7 +211,7 @@
 
 <!-- 评论区 -->
 <section class="comments">
-    <h2 class="comments__title">💬 评论区</h2>
+    <h2 class="comments__title">评论区</h2>
     <div id="giscus-container" class="comments__container">
         <p class="comments__loading">评论加载中... 如果长时间未显示，可能是 GitHub 访问受限。</p>
     </div>

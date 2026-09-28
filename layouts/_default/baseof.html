@@ -74,14 +74,15 @@
                 <img src="/images/bitcoin-logo.svg" alt="Bitcoin" class="logo__icon">
                 <span class="logo__text">{{ .Site.Title }}</span>
             </a>
-            <nav class="nav">
+            <nav class="nav" id="site-nav">
                 {{ range .Site.Menus.main }}
                 <a href="{{ .URL }}"{{ if not (hasPrefix .URL "/search") }} target="{{ if eq .URL "/" }}_self{{ else }}_blank{{ end }}"{{ end }}>{{ .Name }}</a>
                 {{ end }}
                 {{ if not .IsPage }}
-                <button class="random-btn" id="random-btn" title="随机阅读一篇文章">🎲 随机阅读</button>
+                <button class="random-btn" id="random-btn" title="随机阅读一篇文章">随机阅读</button>
                 {{ end }}
             </nav>
+            <button class="nav-toggle" id="nav-toggle" aria-label="打开菜单" aria-expanded="false">☰</button>
         </div>
     </header>
 
@@ -93,8 +94,8 @@
         <div class="container">
             <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }} · <a href="https://btchao.com" style="color:inherit;">btchao.com</a></p>
             <p>
-              <a href="/feed.xml" target="_blank">📰 RSS 订阅</a> · 
-              <a href="/sitemap.xml" target="_blank">🗺️ 网站地图</a> · 
+              <a href="/feed.xml" target="_blank">RSS 订阅</a> ·
+              <a href="/sitemap.xml" target="_blank">网站地图</a> ·
               <a href="/about/" target="_blank">关于本站</a>
             </p>
             <p class="disclaimer">本站内容仅为个人投资思考，不构成任何投资建议。比特币投资具有高波动性，请理性评估自身风险承受能力。</p>
@@ -188,11 +189,6 @@
             script.setAttribute('crossorigin', 'anonymous');
             script.async = true;
 
-            // 暗色模式适配
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                script.setAttribute('theme', 'github-dark');
-            }
-
             container.appendChild(script);
         }
 
@@ -225,22 +221,43 @@
     </script>
     {{ end }}
 
+    <!-- 移动端菜单开关（brand kit topnav 模式） -->
+    <script>
+    (function() {
+        var toggle = document.getElementById('nav-toggle');
+        var nav = document.getElementById('site-nav');
+        if (!toggle || !nav) return;
+        toggle.addEventListener('click', function() {
+            var open = document.body.classList.toggle('nav-open');
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            toggle.textContent = open ? '✕' : '☰';
+        });
+        nav.addEventListener('click', function(e) {
+            if (e.target && e.target.tagName === 'A') {
+                document.body.classList.remove('nav-open');
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.textContent = '☰';
+            }
+        });
+    })();
+    </script>
+
     <!-- 随机阅读按钮 -->
     {{ if not .IsPage }}
     <script>
     document.getElementById('random-btn').addEventListener('click', function() {
         var btn = this;
-        btn.textContent = '🎲 加载中...';
+        btn.textContent = '加载中...';
         btn.disabled = true;
         window.__loadPosts__(function(posts) {
             if (!posts || posts.length === 0) {
-                btn.textContent = '🎲 随机阅读';
+                btn.textContent = '随机阅读';
                 btn.disabled = false;
                 return;
             }
             var random = posts[Math.floor(Math.random() * posts.length)];
             window.open(random.permalink, '_blank');
-            btn.textContent = '🎲 随机阅读';
+            btn.textContent = '随机阅读';
             btn.disabled = false;
         });
     });

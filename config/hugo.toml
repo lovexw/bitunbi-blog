@@ -45,23 +45,23 @@ enableSitemap = true
     url = "/"
     weight = 1
   [[menu.main]]
-    name = "₿ 比特币"
+    name = "比特币"
     url = "/categories/比特币/"
     weight = 2
   [[menu.main]]
-    name = "📖 比特币指南"
+    name = "比特币指南"
     url = "/bitcoin-guide/"
     weight = 3
   [[menu.main]]
-    name = "✍️ 生活随笔"
+    name = "生活随笔"
     url = "/categories/生活随笔/"
     weight = 4
   [[menu.main]]
-    name = "📚 全部文章"
+    name = "全部文章"
     url = "/posts/"
     weight = 5
   [[menu.main]]
-    name = "🔍 搜索"
+    name = "搜索"
     url = "/search/"
     weight = 6
   [[menu.main]]
